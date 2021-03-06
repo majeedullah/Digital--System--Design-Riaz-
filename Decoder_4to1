@@ -1,0 +1,61 @@
+`timescale 1ns / 1ps
+//////////////////////////////////////////////////////////////////////////////////
+// Company: 
+// Engineer: 
+// 
+// Create Date: 03/05/2021 11:29:20 PM
+// Design Name: 
+// Module Name: Decoder_4to1
+// Project Name: 
+// Target Devices: 
+// Tool Versions: 
+// Description: 
+// 
+// Dependencies: 
+// 
+// Revision:
+// Revision 0.01 - File Created
+// Additional Comments:
+// 
+//////////////////////////////////////////////////////////////////////////////////
+
+
+module Decoder_4to1(
+output [3:0] D,
+input A, B, E
+);
+
+
+assign D[0] = ~(~A & ~B & ~E);
+assign D[1] = ~(A  & ~B & ~E);
+assign D[2] = ~(A  &  B & ~E);
+assign D[3] = ~(A  &   B & E);
+
+
+
+endmodule
+
+module Tb();
+
+wire [3:0] D;
+reg A, B, E;
+
+Decoder_4to1 D1(D, A, B, E);
+
+initial
+begin
+
+#00 A = 1'b0; B = 1'bx; E =1'bx;
+#10 A = 1'b0; B = 1'b0; E =1'b0;
+#10 A = 1'b0; B = 1'b0; E =1'b1;
+#10 A = 1'b0; B = 1'b1; E =1'b0;
+#10 A = 1'b0; B = 1'b1; E =1'b1;
+
+end
+
+initial
+
+$monitor($time," ns--E = %b, A = %b, B = %b -- D = %b", E, A, B, D);
+
+
+endmodule
