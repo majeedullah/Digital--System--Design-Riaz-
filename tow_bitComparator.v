@@ -91,7 +91,7 @@ end
 
 initial 
 
-    $monitor($time, " ns -- { A1, A0} = %b, {B1, B0} = %b, A_lt_B = %b, A_eq_B = %b -- A_gt_B =%b", {A[1], A[0]}, {B[1], B[0]}, A_lt_B, A_eq_B, A_gt_B);
+    $monitor($time, " Muhammad Riaz Ali, ns -- { A1, A0} = %b, {B1, B0} = %b, A_lt_B = %b, A_eq_B = %b -- A_gt_B =%b", {A[1], A[0]}, {B[1], B[0]}, A_lt_B, A_eq_B, A_gt_B);
    // $monitor( $time, "ns  --{ A1, A0} = %b, {B1, B0} = %b, A_eq_B = %b, A_lt_B = %b -- A_gt_B = %b", {A[1], A[0]}, {B[1], B[0]} A_gt_B, A_lt_B, A_eq_B); 
     
 
